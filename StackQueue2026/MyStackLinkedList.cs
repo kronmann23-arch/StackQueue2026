@@ -18,6 +18,10 @@ namespace StackQueue2026
 
         public T Pop()
         {
+            if (values.Last == null)
+            {
+                throw new MyStackIsEmptyException("Stack is empty");
+            }
             T temp =values.Last();
             values.RemoveLast();
             return temp ;
